@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box !important;
+}
+
+.navbar {
+  background-color: #292929 !important; /* premium background color */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25) !important; /* shadow effect */
+}
+
+.navbar-brand {
+  font-size: 24px !important;
+  color: white !important; /* contrasting color */
+}
+
+.placing {
+  position: relative;
+  top: 50%;
+  text-align: center;
+  left: 3%;
+}
+
+.navbar-nav .nav-link {
+  color: #F5F5F5 !important; /* light color of navbar background */
+  font-size: 18px !important;
+  font-weight: bold !important;
+  padding: 5px 15px !important;
+  text-transform: uppercase !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff !important;
+}
+
+#login-signup {
+  background-color: #F5F5F5 !important; /* premium background color */
+  padding: 50px 0 !important;
+  color: #292929 !important; /* contrasting color */
+}
+
+#login-signup h2 {
+  font-size: 32px !important;
+  margin-bottom: 30px !important;
+}
+
+#login-signup form {
+  max-width: 500px !important;
+  margin: 0 auto !important;
+}
+
+#login-signup .form-group {
+  margin-bottom: 20px !important;
+}
+
+#login-signup label {
+  font-size: 18px !important;
+  font-weight: bold !important;
+  display: block !important;
+  margin-bottom: 5px !important;
+  color: #292929 !important; /* contrasting color */
+}
+
+#login-signup button[type="submit"] {
+  background-color: #4CAF50 !important; /* Green color */
+  color: #FFF !important; /* White Text */
+  border: none !important;
+  padding: 10px 20px !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  margin-top: 20px !important;
+}
+
+#login-signup button[type="submit"]:hover {
+  background-color: #3d8b40 !important; /* Dark Green on hover */
+}
+
+#login-signup button[type="submit"]:active {
+  transform: translateY(2px) !important;
+}
+
+#login-signup button.btn-secondary {
+  background-color: #6c757d !important;
+}
+
+#login-signup button.btn-secondary:hover {
+  background-color: #5a6268 !important;
+}
+
+#login-signup button.btn-secondary:active {
+  transform: translateY(2px) !important;
+}
+
+footer {
+  background-color:#292929 !important; /* premium background color */
+  color: white !important;
+  padding: 15px !important;
+  text-align: center !important;
+}

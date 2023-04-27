@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Organic Farming</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="E:\Sathwik\IIT KGP\3.2\IS Project\Website\HTML\static\signup.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/home">Organic Farming</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="login-signup" class="py-md-5 py-4">
+        <div class="container-sm text-center">
+          <h2 class="mb-4">Sign Up</h2>
+          <form action='/success' method="POST" class="placing">
+            <div class="row mb-3 justify-content-center">
+              <div class="col-md-2 text-md-right">
+                <label for="username">Name</label>
+              </div>
+              <div class="col-md-4 text-md-left">
+                <input type="text" class="form-control-sm form-control-rounded" id="username" name="username" placeholder="Enter your Name">
+              </div>
+            </div>
+            <div class="row mb-3 justify-content-center">
+              <div class="col-md-2 text-md-right">
+                <label for="Phone">Phone</label>
+              </div>
+              <div class="col-md-4 text-md-left">
+                <input type="tel" class="form-control-sm form-control-rounded" id="Phone" name="Phone" placeholder="Enter your Phone Number">
+              </div>
+            </div>
+            <div class="row mb-3 justify-content-center">
+              <div class="col-md-2 text-md-right">
+                <label for="state">State</label>
+              </div>
+              <div class="col-md-4 text-md-left">
+                <select name="state" class="form-control-sm form-control-rounded">
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Manipur">Manipur</option>
+                  <option value=\"Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option>
+                  <option value="Nagaland">Nagaland</option>
+                  <option value="Odisha">Odisha</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Sikkim">Sikkim</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Tripura">Tripura</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Uttarakhand">Uttarakhand</option>
+                  <option value="West Bengal">West Bengal</option>
+                </select>
+              </div>
+            </div>
+            <div class="row mb-3 justify-content-center">
+              <div class="col-md-2 text-md-right">
+                <label for="password">Password</label>
+              </div>
+              <div class="col-md-4 text-md-left">
+                <input type="password" class="form-control-sm form-control-rounded" id="password" name="password" placeholder="Enter your password">
+              </div>
+            </div>
+            <div class="row mb-3 justify-content-center">
+              <div class="col-md-2 text-md-right">
+                <label for="confirm_password">Confirm Password</label>
+              </div>
+              <div class="col-md-4 text-md-left">
+                <input type="password" class="form-control-sm form-control-rounded" id="confirm_password" name="confirm_password" placeholder="Re-enter your password">
+                <br>
+                {% if error %}
+                <p class="text-danger">{{ error }}</p>
+                {% endif %}
+              </div>
+            </div>
+            <div class="row mb-3 justify-content-center">
+              <div class="col-md-2 text-md-right">
+                <label>Role</label>
+              </div>
+              <div class="col-md-4 text-md-left">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-secondary active">
+                    <input type="radio" id="customer" name="role" value="customer" checked>Customer
+                  </label>
+                  <label class="btn btn-outline-secondary">
+                    <input type="radio" id="seller" name="role" value="farmer">Farmer
+                  </label>
+                  <label class="btn btn-outline-secondary">
+                    <input type="radio" id="both" name="role" value="Transporter">Transporter
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-secondary btn-lg mx-auto">Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </section>
+                      
+    <footer class="py-3 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Organic Farming &copy; 2022</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

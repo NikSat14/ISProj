@@ -1,0 +1,320 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Products - Organic Farming</title> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="E:\Sathwik\IIT KGP\3.2\IS Project\Website\HTML\static\products.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='products.css') }}">
+</head> 
+<body> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+        <div class="container"> 
+            <a class="navbar-brand" href="/home">Organic Farming</a> 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
+                <span class="navbar-toggler-icon"></span> 
+            </button> 
+            <div class="collapse navbar-collapse" id="navbarNav"> 
+                <ul class="navbar-nav ml-auto" class="list-group"> 
+                    <li class="nav-item"  > 
+                        <a class="nav-link" href="/home">Home</a> 
+                    </li> 
+                    <li class="nav-item active" > 
+                        <a class="nav-link" href="/products">Products <span class="sr-only">(current)</span></a> 
+                    </li> 
+                    <li class="nav-item" > 
+                        <a class="nav-link" href="#blog">Blog</a> 
+                    </li> 
+                    <li class="nav-item" > 
+                        <a class="nav-link" href="#about">About</a> 
+                    </li> 
+                    <li class="nav-item" > 
+                        <a class="nav-link" href="/cart" data-toggle="modal" data-target="#cartModal">Cart</a> 
+                    </li> 
+                    <li class="nav-item" > 
+                        <a class="nav-link" href='/login'>Login/Sign Up</a> 
+                    </li> 
+                </ul> 
+            </div> 
+        </div> 
+    </nav> 
+
+    <header class="bg-light py-5"> 
+        <div class="container"> 
+            <h1>Our Products</h1> 
+            <p class="lead">Browse our selection of high-quality organic fruits, vegetables, and dairy products.</p> 
+        </div> 
+    </header> 
+
+    <div class="container py-5"> 
+        <div class="row"> 
+            <div class="col-lg-4 mb-4"> 
+                <div class="card h-100"> 
+                    <img class="card-img-top" src="{{ url_for('static', filename='pics/Organic Fruits.jpg') }}" alt="Organic Fruits"> 
+                    <div class="card-body"> 
+                        <h5 class="card-title">Organic Fruits</h5> 
+                        <p class="card-text">Our fruits are grown using sustainable practices and without the use of synthetic pesticides or fertilizers, ensuring the best taste and nutrition.</p> 
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#organicFruitsModal">View Products</button> 
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="organicFruitsModal" tabindex="-1" role="dialog" aria-labelledby="organicFruitsModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="organicFruitsModalLabel">Organic Fruits</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <form action="/add-to-cart" method="POST">
+                                <div class="modal-body">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Product Name</th>
+                                        <th>Quantity Available</th>
+                                        <th>Grade</th>
+                                        <th>Quantity</th>
+                                        <th>Price Per KG</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for product in fruits %}
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" id="Product{{ product[0] }}" name="Product{{ product[0] }}">
+                                        </td>
+                                        <td>{{ product[3] }}</td>
+                                        <td>{{ product[4] }}</td>
+                                        <td>{{ product[5] }}</td>
+                                        <td>
+                                            <input type="number" class="form-control" id="Quantity{{ product[0] }}" name="Quantity{{ product[0] }}" value="0" min="0" max="{{ product[4] }}">
+                                        </td>
+                                        <td>{{ product[6] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" >Add to Cart</button>
+                                </div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+            </div> 
+            <div class="col-lg-4 mb-4"> 
+                <div class="card h-100"> 
+                    <img class="card-img-top" src="{{ url_for('static', filename='pics/Organic Vegitables.jpg') }}" alt="Organic Vegitables"> 
+                    <div class="card-body"> 
+                        <h5 class="card-title">Organic Vegetables</h5> 
+                        <p class="card-text">Our vegetables are picked fresh and grown using organic and sustainable farming methods, so you can enjoy the best taste and nutrition.</p> 
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#organicVegetablesModal">View Products</button> 
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="organicVegetablesModal" tabindex="-1" role="dialog" aria-labelledby="organicVegetablesModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="organicVegetablesModalLabel">Organic Vegetables</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form action="/add-to-cart" method="POST">
+                            <div class="modal-body">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Product Name</th>
+                                        <th>Quantity Available</th>
+                                        <th>Grade</th>
+                                        <th>Quantity</th>
+                                        <th>Price Per KG</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for product in vegetables %}
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" id="Product{{ product[0] }}" name="Product{{ product[0] }}">
+                                        </td>
+                                        <td>{{ product[3] }}</td>
+                                        <td>{{ product[4] }}</td>
+                                        <td>{{ product[5] }}</td>
+                                        <td>
+                                            <input type="number" class="form-control" id="Quantity{{ product[0] }}" name="Quantity{{ product[0] }}" value="0" min="0" max="{{ product[4] }}">
+                                        </td>
+                                        <td>{{ product[6] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" >Add to Cart</button>
+                                </div>
+                            </form> 
+                            </div>
+                        </div>
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+            <div class="col-lg-4 mb-4"> 
+                <div class="card h-100"> 
+                    <img class="card-img-top" src="{{ url_for('static', filename='pics/Organic Dairy.jpg') }}" alt="Organic Dairy"> 
+                    <div class="card-body"> 
+                        <h5 class="card-title">Organic Dairy</h5> 
+                        <p class="card-text">Our dairy products are made from cows that are raised on pasture and fed a natural diet, ensuring the highest quality and taste.</p> 
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#organicDairyModal">View Products</button> 
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="organicDairyModal" tabindex="-1" role="dialog" aria-labelledby="organiDairyModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="organicDairyModalLabel">Organic Dairy</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form action="/add-to-cart" method="POST">
+                            <div class="modal-body">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Product Name</th>
+                                        <th>Quantity Available</th>
+                                        <th>Grade</th>
+                                        <th>Quantity</th>
+                                        <th>Price Per Unit</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for product in dairy %}
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" id="Product{{ product[0] }}" name="Product{{ product[0] }}">
+                                        </td>
+                                        <td>{{ product[3] }}</td>
+                                        <td>{{ product[4] }}</td>
+                                        <td>{{ product[5] }}</td>
+                                        <td>
+                                            <input type="number" class="form-control" id="Quantity{{ product[0] }}" name="Quantity{{ product[0] }}" value="0" min="0" max="{{ product[4] }}">
+                                        </td>
+                                        <td>{{ product[6] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" >Add to Cart</button>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+
+    <footer class="py-3 bg-dark"> 
+        <div class="container"> 
+            <p class="m-0 text-center text-white">Organic Farming &copy; 2022</p> 
+        </div> 
+    </footer> 
+
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price Per Unit</th>
+                    <th>Total Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for item in cart_items %}
+                    <tr>
+                      <td>{{ item[2] }}</td>
+                      <td>{{ item[3] }}</td>
+                      <td>{{ item[4] }}</td>
+                      <td>{{ item[5] }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <form action="/clear_cart" method="POST">
+                <button type="submit" class="btn btn-warning" id="clearCart">Clear Cart</button>
+              </form>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deliveryModal">Buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal" tabindex="-1" role="dialog" id="deliveryModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Delivery Information</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="/submit_order" method="POST">
+            <div class="modal-body">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+                </div>
+                <div class="form-group">
+                  <label for="address">Address</label>
+                  <input type="text" class="form-control" id="address" placeholder="Enter your delivery address" name="address">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" name="phone">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>  
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</body> 
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organic Farming</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="E:\Sathwik\IIT KGP\3.2\IS Project\Website\HTML\static\Home.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='Home.css') }}">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#" style="font-weight: 700; color: #d4e157;">Organic Farming</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#blog">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login/Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-light py-5">
+    <div class="container">
+      <h1>Welcome to Organic Farming</h1>
+      <p class="lead">We believe in sustainable farming and bringing you the highest quality organic products.</p>
+      <a href="/products" class="btn btn-primary">Shop Now</a>
+    </div>
+  </header>
+
+  <section id="services" class="py-5">
+    <div class="container py-5">
+      <h2 class="mb-4">Our Products</h2>
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <img class="card-img-top" src="{{ url_for('static', filename='pics/Organic Fruits.jpg') }}" alt="Organic Fruits">
+            <div class="card-body">
+              <h5 class="card-title">Organic Fruits</h5>
+              <p class="card-text">Our fruits are grown using sustainable practices and without the use of synthetic pesticides or fertilizers, ensuring the best taste and nutrition.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <img class="card-img-top" src="{{ url_for('static', filename='pics/Organic Vegitables.jpg') }}" alt="Organic Vegetables">
+            <div class="card-body">
+              <h5 class="card-title">Organic Vegetables</h5>
+              <p class="card-text">Our vegetables are picked fresh and grown using organic and sustainable farming methods, so you can enjoy the best taste and nutrition.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <img class="card-img-top" src="{{ url_for('static', filename='pics/Organic Dairy.jpg') }}" alt="Organic Dairy">
+            <div class="card-body">
+              <h5 class="card-title">Organic Dairy</h5>
+              <p class="card-text">Our dairy products are made from cows that are raised on pasture and fed a natural diet, ensuring the highest quality and taste.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">From Our Blog</h2>
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="{{ url_for('static', filename='pics/Blog 1.png') }}" alt="Blog Post 1">
+          <div class="card-body">
+            <h5 class="card-title">How We're Revolutionizing Organic Farming</h5>
+            <p class="card-text">Read about our innovative farming techniques and how we're leading the way in sustainable agriculture.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Posted on Jan 1, 2022</small>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top" src="{{ url_for('static', filename='pics/Blog 2.png') }}" alt="Blog Post 2">
+          <div class="card-body">
+            <h5 class="card-title">The Benefits of Organic Food</h5>
+            <p class="card-text">Learn about the health benefits of eating organic and how it can help you live a healthier life.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Posted on Feb 1, 2022</small>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top" src="{{ url_for('static', filename='pics/Blog 3.png') }}" alt="Blog Post 3">
+          <div class="card-body">
+            <h5 class="card-title">Why Supporting Local Farmers is Important</h5>
+            <p class="card-text">Discover the importance of supporting local farmers and how it can help your community thrive.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Posted on Mar 1, 2022</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="mb-4">About Us</h2>
+      <p>Organic Farming is a family-owned business that believes in the importance of sustainable and organic farming practices. We work directly with local farmers who share our commitment to quality and environmental stewardship, and we strive to bring you the best-tasting, healthiest organic products on the market.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">Contact Us</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter your email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </section>
+  
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Organic Farming &copy; 2022</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

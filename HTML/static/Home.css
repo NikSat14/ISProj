@@ -1,0 +1,109 @@
+/* Common background image for navbar and header */
+.navbar, header {
+    background-image: url('header blue.jpg');
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: center top;
+    background-attachment: fixed;
+    border-radius: 0;
+}
+
+/* Background color for navbar */
+.navbar{
+    background-color: #619564 !important;
+}
+
+/* Color of the link in navbar */
+.navbar-nav .nav-link{
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 0;
+}
+
+/* Color of active link in navbar */
+.nav-item.active .nav-link{
+    color: #d4e157 !important;
+}
+
+/* Styling the h1 tag in header */
+header h1{
+    font-size: 48px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* Styling the lead text in header */
+header .lead{
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+/* Styling the Shop Now button in header */
+header .btn-primary{
+    background-color: #d4e157;
+    border-color: #d4e157;
+    font-weight: 500;
+    border-radius: 0;
+}
+
+.card {
+    border: none;
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1.1rem;
+}
+
+/* Background color of blog section */
+section#blog{
+    background-color: #81c784 !important;
+    border-radius: 5px;
+}
+
+/* Background color of contact section */
+section#contact{
+    background-color: #388e3c !important;
+    border-radius: 5px;
+}
+
+/* Styling the h2 tag in blog and contact section */
+section#blog h2, section#contact h2{
+    font-size: 38px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* Styling the form in contact section */
+form{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Color of footer text */
+footer p{
+    color: #9e9e9e;
+    font-size: 16px;
+    font-weight: 500;
+}

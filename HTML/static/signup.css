@@ -1,0 +1,139 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+/* Body */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navbar */
+#login-signup {
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+.placing {
+    position: relative;
+    top: 50%;
+    text-align: center;
+    left: 3%;
+}
+
+.navbar {
+  background-color: #292929 !important; /* premium background color */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25) !important; /* shadow effect */
+ }
+
+.navbar-brand {
+  font-size: 24px !important;
+  color: white !important; /* contrasting color */
+}
+
+.nav-link {
+  color: #F5F5F5 !important; /* light color of navbar background */
+  font-size: 18px !important;
+  font-weight: bold !important;
+  padding: 5px 15px !important;
+  text-transform: uppercase !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFA500 !important;
+}
+
+/* Sign up section */
+#login-signup {
+    text-align: center;
+    padding: 50px 0px;
+}
+
+#login-signup h2 {
+    font-size: 36px;
+    color: #17252A;
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 20px;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    color: #748194;
+    padding: 5px !important;
+    border: none;
+}
+
+input, select {
+    border: 1px solid #ccc; /* Add a gray border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 8px 12px; /* Add some padding */
+    box-sizing: border-box; /* Make sure inputs and selects have the same box-sizing */
+    margin-bottom: 10px; /* Add some space between input fields */
+  }
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: -3%;
+    padding-top: 30px;
+  }
+  
+
+.form-group label {
+    font-size: 20px;
+    color: #17252A;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+.form-group label {
+    font-size: 20px;
+    color: #17252A;
+    font-weight: 500;
+}
+
+button.btn-secondary {
+    border-radius: 30px;
+    border: none;
+    background-color: #eb5e28;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 15px 50px;
+    transition: all 0.3s;
+}
+
+button.btn-secondary:hover {
+    background-color: #f18c58;
+}
+
+
+
+/* Footer */
+footer {
+  background-color:#292929 !important; /* premium background color */
+  color: white !important;
+  padding: 15px !important;
+  text-align: center !important;
+}
+
+footer p {
+    font-size: 18px;
+}
